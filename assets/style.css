@@ -1,0 +1,22 @@
+* {
+  font-family: 'Mukta', sans-serif;
+}
+
+#jumbotron {
+  background-color: #EFEFEF;
+  color: #FF3B3F;
+}
+
+body {
+  background-color: #474973;
+}
+
+#twitter, #interContainer, #stateOne, #stateTwo, #stateThree {
+  background-color: #EFEFEF;
+}
+
+
+#message, #footer {
+  background-color: #04080F;
+  color: white;
+}
