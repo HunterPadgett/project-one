@@ -11,7 +11,7 @@ body {
   background-color: #474973;
 }
 
-#twitter, #interContainer, #stateOne, #stateTwo, #stateThree {
+#interContainer, #stateOne, #stateTwo, #stateThree {
   background-color: #EFEFEF;
 }
 
@@ -19,6 +19,10 @@ body {
 #message, #footer {
   background-color: #04080F;
   color: white;
+}
+
+#twitter {
+  background-color: ;
 }
 
 .twitter-timeline {
