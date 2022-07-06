@@ -27,7 +27,28 @@ function getInternationalNews(nationalNewsUrl) {
 
 getInternationalNews(nationalNewsUrl)
 
+// variables for state news API
+// legiscan user manual: https://legiscan.com/gaits/documentation/legiscan
+var stateNewsURL = 'https://api.legiscan.com/?key=9bf6fb64823ce819fdf2cf635e983ccd&op=getSearch&&query=abortion+OR+(pregnancy+NEAR+termination)';
 
+// function to call legiscan api and handle through JSON
+function getStateNews(stateNewsURL) {
+	fetch(stateNewsURL).then(function(response) {
+		return response.json();
+	}).then(function (data) {
+		console.log(data);
+		// data has now ben handled into an object, now to display to cards
+		var firstBillState = data.searchresult[0].state;
+		var firstBillNumber = data.searchresult[0].bill_number;
+		var firstBillURL = data.searchresult[0].url;
+		var firstBillStatus = data.searchresult[0].last_action;
+		var firstBillLastAction = data.searchresult[0].last_action_date;
+		
+	})
+}
 
+getStateNews(stateNewsURL);
+
+// 9bf6fb64823ce819fdf2cf635e983ccd API key for LegiScan
 
 // AIzaSyCBtLqLJi2y-KT0N09jB3sgO2YJOw3JR_c APi key for custom google search (hunter)
