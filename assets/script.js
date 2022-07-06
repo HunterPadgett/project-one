@@ -13,17 +13,17 @@ const options = {
 };
 
 function getInternationalNews(nationalNewsUrl) {
-    fetch(nationalNewsUrl, options)
-	    .then(response => response.json())
-	    .then(response => {
+	fetch(nationalNewsUrl, options)
+		.then(response => response.json())
+		.then(response => {
 			console.log(response)
-			natNewsHeadline.textContent = response.articles[0].title 
+			natNewsHeadline.textContent = response.articles[0].title
 			natNewsDescription.textContent = response.articles[0].description
-      // you had the img set to .TextContent but you needed to target the img src :)
+			// you had the img set to .TextContent but you needed to target the img src :)
 			natNewsImage.src = response.articles[0].urlToImage
 		})
-	    .catch(err => console.error(err))
-        
+		.catch(err => console.error(err))
+
 }
 
 getInternationalNews(nationalNewsUrl)
@@ -34,20 +34,36 @@ var stateNewsURL = 'https://api.legiscan.com/?key=9bf6fb64823ce819fdf2cf635e983c
 
 // function to call legiscan api and handle through JSON
 function getStateNews(stateNewsURL) {
-	fetch(stateNewsURL).then(function(response) {
+	fetch(stateNewsURL).then(function (response) {
 		return response.json();
 	}).then(function (data) {
 		console.log(data);
 		// data has now ben handled into an object, now to display to cards
-		var firstBillState = data.searchresult[0].state;
-		var firstBillNumber = data.searchresult[0].bill_number;
-		var firstBillURL = data.searchresult[0].url;
-		var firstBillStatus = data.searchresult[0].last_action;
-		var firstBillLastAction = data.searchresult[0].last_action_date;
-		
+		// for loop assigns content to cards, looping through 3 times to reduce repetitive hardcoding
+		for (var i = 0; i < 3; i++) {
+			// variables for page display are pulled from api data
+			var BillState = data.searchresult[i].state;
+			var BillNumber = data.searchresult[i].bill_number;
+			var Billtitle = data.searchresult[i].title;
+			var BillURL = data.searchresult[i].url;
+			var BillStatus = data.searchresult[i].last_action;
+			var BillLastAction = data.searchresult[i].last_action_date;
+
+			// ensure index of for loop aligns with page display numbers
+			var H = i + 1;
+			// set text of bill title with state and id
+			$(`#stateTitle${H}`).html(`${BillState} ${BillNumber}`);
+			// set text of bill content
+			$(`#stateText${H}`).html(`Per author of bill, handles: ${Billtitle}`);
+			// set link to bill information page
+			$(`#stateLink${H}`).html(`<a href="${BillURL}" target="_blank">Bill Information Page</a>`);
+			// set text of current bill status
+			$(`#stateStatus${H}`).html(`As of ${BillLastAction}, the bill's status is: ${BillStatus}`);
+		}
 	})
 }
 
+// function call for state news cards
 getStateNews(stateNewsURL);
 
 // 9bf6fb64823ce819fdf2cf635e983ccd API key for LegiScan
