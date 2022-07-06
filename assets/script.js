@@ -1,21 +1,29 @@
-var internationalNewsUrl = 'https://google-news.p.rapidapi.com/v1/topic_headlines?lang=en&country=US&topic=NATION'
+var internationalNewsUrl = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=71e1603193854be49b0cc7391526fa4f'
 
 var intNewsText = document.getElementById("internationalNews")
 
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '10c804eb9dmsh767850cc77dae2fp1d40cfjsn0a11563a3a53',
-		'X-RapidAPI-Host': 'google-news.p.rapidapi.com'
+		'X-Api-Key': '71e1603193854be49b0cc7391526fa4f',
+		// 'X-RapidAPI-Host': 'newsapi.org'
 	}
 };
 
 function getInternationalNews(internationalNewsUrl) {
     fetch(internationalNewsUrl, options)
 	    .then(response => response.json())
-	    .then(response => console.log(response))
+	    .then(response => {
+			console.log(response)
+			intNewsText.textContent = response.ok // loop through 
+		})
 	    .catch(err => console.error(err))
-        intNewsText.textContent = response
+        
 }
 
 getInternationalNews(internationalNewsUrl)
+
+
+
+
+// AIzaSyCBtLqLJi2y-KT0N09jB3sgO2YJOw3JR_c APi key for custom google search (hunter)
