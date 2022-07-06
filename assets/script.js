@@ -19,3 +19,8 @@ function getInternationalNews(internationalNewsUrl) {
 }
 
 getInternationalNews(internationalNewsUrl)
+
+
+
+
+// AIzaSyCBtLqLJi2y-KT0N09jB3sgO2YJOw3JR_c APi key for custom google search (hunter)
