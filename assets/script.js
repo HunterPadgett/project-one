@@ -1,6 +1,8 @@
-var internationalNewsUrl = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=71e1603193854be49b0cc7391526fa4f'
+var nationalNewsUrl = 'https://newsapi.org/v2/everything?q=reproductive-rights&from=2022-07-05&sortBy=popularity&pageSize=5&apiKey=71e1603193854be49b0cc7391526fa4f'
 
-var intNewsText = document.getElementById("internationalNews")
+var natNewsHeadline = document.getElementById("nationalNewsHeadline")
+var natNewsDescription = document.getElementById("nationalNewsDescription")
+var natNewsImage = document.getElementById("nationalNewsImage")
 
 const options = {
 	method: 'GET',
@@ -10,18 +12,20 @@ const options = {
 	}
 };
 
-function getInternationalNews(internationalNewsUrl) {
-    fetch(internationalNewsUrl, options)
+function getInternationalNews(nationalNewsUrl) {
+    fetch(nationalNewsUrl, options)
 	    .then(response => response.json())
 	    .then(response => {
 			console.log(response)
-			intNewsText.textContent = response.ok // loop through 
+			natNewsHeadline.textContent = response.articles[0].title 
+			natNewsDescription.textContent = response.articles[0].description
+			natNewsImage.textContent = response.articles[0].urlToImage
 		})
 	    .catch(err => console.error(err))
         
 }
 
-getInternationalNews(internationalNewsUrl)
+getInternationalNews(nationalNewsUrl)
 
 
 
