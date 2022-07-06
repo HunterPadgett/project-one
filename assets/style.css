@@ -20,3 +20,7 @@ body {
   background-color: #04080F;
   color: white;
 }
+
+.twitter-timeline {
+  overflow: scroll;
+}
