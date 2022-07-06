@@ -19,7 +19,8 @@ function getInternationalNews(nationalNewsUrl) {
 			console.log(response)
 			natNewsHeadline.textContent = response.articles[0].title 
 			natNewsDescription.textContent = response.articles[0].description
-			natNewsImage.textContent = response.articles[0].urlToImage
+      // you had the img set to .TextContent but you needed to target the img src :)
+			natNewsImage.src = response.articles[0].urlToImage
 		})
 	    .catch(err => console.error(err))
         
