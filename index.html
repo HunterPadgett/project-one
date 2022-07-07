@@ -2,173 +2,195 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/7daeab2ad9.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Poppins&display=swap" rel="stylesheet">
-    <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css” />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./assets/style.css">
-    <link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png"/>
-    <title>Group Project One</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/7daeab2ad9.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Poppins&display=swap" rel="stylesheet">
+  <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css” />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png" />
+  <title>Group Project One</title>
 </head>
 
 <body>
-    <!-- header -->
-    <div class="jumbotron row p-3" id="jumbotron">
-        <div class="container col-lg-9 col-md-7 col-sm-12" id="mainHeader">
-            <h1 class="display-4"><a href="index.html"><img alt="logo" src="./assets/images/reproductive_rights.png"/></a> </h1>
-            <p class="lead">keep up-to-date with most recent laws post Roe v. Wade overturn</p>
-        </div>
-
-        <ul class="nav col-lg-3 col-md-5 col-sm-12 d-flex align-items-end flex-nowrap" id="navBar">
-            <li class="nav-item">
-                <a class="nav-link active" href="#twitter">Twitter</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#interContainer"> News Feed</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#stateContainer">State Legislation</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#footer">Contact Us</a>
-            </li>
-        </ul>
+  <!-- header -->
+  <div class="jumbotron row p-3" id="jumbotron">
+    <div class="container col-lg-9 col-md-7 col-sm-12" id="mainHeader">
+      <h1 class="display-4"><a href="index.html"><img class="img-fluid" alt="logo"
+            src="./assets/images/reproductive_rights.png" /></a> </h1>
+      <p class="lead text-md-left text-lg-left text-sm-center text-xs-center">keep up-to-date with the most recent laws
+        post Roe v. Wade overturn</p>
     </div>
-    <!-- search bar -->
-    <nav class="navbar navbar-light mt-0 mb- pt-0" id="searchBar">
-        <form class="form-inline col-lg-6">
-            <script async src="https://cse.google.com/cse.js?cx=b7e4fc32ec84d48be">
-            </script>
-            <div class="gcse-search"></div>
-        </form>
-    </nav>
-    <!-- container holding twitter feed and international news -->
-    <div class="row justify-content-around" id="bigContainer">
-        <!-- twitter feed -->
-        <div class="card col-lg-3 col-md-4 col-sm-10 col-xs-8 mt-4 bg-dark" id="twitter" style=" height: 600px">
-            <div class="card-body">
-                <p class="card-text">
-                    <a href="https://twitter.com/intent/tweet?button_hashtag=BansOffOurBodies&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-related="PPact,ReproRights,RewireNewsGroup,PPFA" data-show-count="false">Tweet #BansOffOurBodies</a>
-                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    <a class="twitter-timeline" data-height="530" data-theme="dark" href="https://twitter.com/farrahsyed97/lists/1544703933683204098?ref_src=twsrc%5Etfw">Twitter Accounts</a>
-                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </p>
-            </div>
-        </div>
-        <!-- national news -->
-        <div class="card col-lg-8 col-md-6 col-sm-10 col-xs-8 mt-4" id="interContainer" style="height: 600px">
-            <h5 class="card-header">National News Feed</h5>
-            <div class="card-body">
-                <img class="img-fluid" id="nationalNewsImage">
-                <p>
-                    <a id="nationalNewsLink" href="" target="blank"></a>
-                </p>
-                <h5 class="card-title" id="nationalNewsHeadline">Special title treatment</h5>
-                <p class="card-text" id="nationalNewsDescription">With supporting text below as a natural lead-in to additional content.</p>
-                <hr>
-                <img class="img-fluid" id="nationalNewsImage2">
-                <p>
-                    <a id="nationalNewsLink2" href="" target="blank"></a>
-                </p>
-                <h5 class="card-title" id="nationalNewsHeadline2">Special title treatment</h5>
-                <p class="card-text" id="nationalNewsDescription2">With supporting text below as a natural lead-in to additional content.</p>
-                <hr>
-                <img class="img-fluid" id="nationalNewsImage3">
-                <p>
-                    <a id="nationalNewsLink3" href="" target="blank"></a>
-                </p>
-                <h5 class="card-title" id="nationalNewsHeadline3">Special title treatment</h5>
-                <p class="card-text" id="nationalNewsDescription3">With supporting text below as a natural lead-in to additional content.</p>
-                <hr>
-                <img class="img-fluid" id="nationalNewsImage4">
-                <p>
-                    <a id="nationalNewsLink4" href="" target="blank"></a>
-                </p>
-                <h5 class="card-title" id="nationalNewsHeadline4">Special title treatment</h5>
-                <p class="card-text" id="nationalNewsDescription4">With supporting text below as a natural lead-in to additional content.</p>
-                <hr>
-                <img class="img-fluid" id="nationalNewsImage5">
-                <p>
-                    <a id="nationalNewsLink5" href="" target="blank"></a>
-                </p>
-                <h5 class="card-title" id="nationalNewsHeadline5">Special title treatment</h5>
-                <p class="card-text" id="nationalNewsDescription5">With supporting text below as a natural lead-in to additional content.</p>
-
-            </div>
-        </div>
+    <!-- nav bar -->
+    <ul class="nav col-lg-3 col-md-5 col-sm-12 d-flex align-items-end flex-nowrap" id="navBar">
+      <li class="nav-item">
+        <a class="nav-link active" href="#twitter">Twitter</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#interContainer"> News Feed</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#stateContainer">State Legislation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#footer">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+  <!-- search bar -->
+  <nav class="navbar navbar-light mt-0 mb- pt-0" id="searchBar">
+    <form class="form-inline col-lg-6">
+      <script async src="https://cse.google.com/cse.js?cx=b7e4fc32ec84d48be">
+      </script>
+      <div class="gcse-search"></div>
+    </form>
+  </nav>
+  <!-- container holding twitter feed and international news -->
+  <div class="row justify-content-around" id="bigContainer">
+    <!-- twitter feed -->
+    <div class="card col-lg-3 col-md-4 col-sm-10 col-xs-8 mt-4 bg-dark" id="twitter" style=" height: 600px">
+      <div class="card-body">
+        <p class="card-text">
+          <a href="https://twitter.com/intent/tweet?button_hashtag=BansOffOurBodies&ref_src=twsrc%5Etfw"
+            class="twitter-hashtag-button" data-related="PPact,ReproRights,RewireNewsGroup,PPFA"
+            data-show-count="false">Tweet #BansOffOurBodies</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <a class="twitter-timeline" data-height="530" data-theme="dark"
+            href="https://twitter.com/farrahsyed97/lists/1544703933683204098?ref_src=twsrc%5Etfw">Twitter Accounts</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </p>
+      </div>
     </div>
-    <!-- state legislation news section -->
-    <div class="card-deck m-2 pt-4 pl-1.5" id="stateContainer">
-        <div class="card" id="stateOne">
-            <img class="card-img-top" id="stateIcon1" src="..." alt="362x200">
-            <div class="card-body">
-                <h4 class="card-title" id="stateTitle1">State Legislation Cards</h4>
-                <p class="card-text" id="stateText1">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text" id="stateLink1"></p>
-                <p class="card-text" id="stateStatus1"></p>
-            </div>
-        </div>
-        <div class="card" id="stateTwo">
-            <img class="card-img-top" id="stateIcon2" src="..." alt="362x200">
-            <div class="card-body">
-                <h4 class="card-title" id="stateTitle2">State Legislation Cards</h4>
-                <p class="card-text" id="stateText2">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text" id="stateLink2"></p>
-                <p class="card-text" id="stateStatus2"></p>
-            </div>
-        </div>
-        <div class="card" id="stateThree">
-            <img class="card-img-top" id="stateIcon3" src="..." alt="362x200">
-            <div class="card-body">
-                <h4 class="card-title" id="stateTitle3">State Legislation Cards</h4>
-                <p class="card-text" id="stateText3">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                <p class="card-text" id="stateLink3"></p>
-                <p class="card-text" id="stateStatus3"></p>
-            </div>
-        </div>
+    <!-- national news articles -->
+    <div class="card col-lg-8 col-md-6 col-sm-10 col-xs-8 mt-4" id="interContainer" style="height: 600px">
+      <h5 class="card-header">National News Feed</h5>
+      <div class="card-body">
+        <img class="img-fluid" id="nationalNewsImage">
+        <p>
+          <a id="nationalNewsLink" href="" target="blank"></a>
+        </p>
+        <h5 class="card-title" id="nationalNewsHeadline">Special title treatment</h5>
+        <p class="card-text" id="nationalNewsDescription">With supporting text below as a natural lead-in to additional
+          content.
+        </p>
+        <hr>
+        <img class="img-fluid" id="nationalNewsImage2">
+        <p>
+          <a id="nationalNewsLink2" href="" target="blank"></a>
+        </p>
+        <h5 class="card-title" id="nationalNewsHeadline2">Special title treatment</h5>
+        <p class="card-text" id="nationalNewsDescription2">With supporting text below as a natural lead-in to additional
+          content.
+        </p>
+        <hr>
+        <img class="img-fluid" id="nationalNewsImage3">
+        <p>
+          <a id="nationalNewsLink3" href="" target="blank"></a>
+        </p>
+        <h5 class="card-title" id="nationalNewsHeadline3">Special title treatment</h5>
+        <p class="card-text" id="nationalNewsDescription3">With supporting text below as a natural lead-in to additional
+          content.
+        </p>
+        <hr>
+        <img class="img-fluid" id="nationalNewsImage4">
+        <p>
+          <a id="nationalNewsLink4" href="" target="blank"></a>
+        </p>
+        <h5 class="card-title" id="nationalNewsHeadline4">Special title treatment</h5>
+        <p class="card-text" id="nationalNewsDescription4">With supporting text below as a natural lead-in to additional
+          content.
+        </p>
+        <hr>
+        <img class="img-fluid" id="nationalNewsImage5">
+        <p>
+          <a id="nationalNewsLink5" href="" target="blank"></a>
+        </p>
+        <h5 class="card-title" id="nationalNewsHeadline5">Special title treatment</h5>
+        <p class="card-text" id="nationalNewsDescription5">With supporting text below as a natural lead-in to additional
+          content.
+        </p>
+      </div>
     </div>
-    <hr>
-    <!-- footer -->
-    <footer class=" text-center" id="footer">
-        <h5 class="h4 text-white pt-4 pb-0">Contact us on Linkedin!</h5>
-        <div class="container p-3 pb-0" id="linkedIn">
-            <section class="mb-2">
-                <!-- Victoria -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/victoria-dunlap/" target="_blank" role="button">Victoria
+  </div>
+  <!-- state legislation news section -->
+  <div class="card-deck m-2 pt-4 pl-1.5" id="stateContainer">
+    <div class="card" id="stateOne">
+      <img class="card-img-top" id="stateIcon1" src="..." alt="362x200">
+      <div class="card-body">
+        <h4 class="card-title" id="stateTitle1">State Legislation Cards</h4>
+        <p class="card-text" id="stateText1">This is a longer card with supporting text below as a natural lead-in to
+          additional content. This content is a little bit longer.</p>
+        <p class="card-text" id="stateLink1"></p>
+        <p class="card-text" id="stateStatus1"></p>
+      </div>
+    </div>
+    <div class="card" id="stateTwo">
+      <img class="card-img-top" id="stateIcon2" src="..." alt="362x200">
+      <div class="card-body">
+        <h4 class="card-title" id="stateTitle2">State Legislation Cards</h4>
+        <p class="card-text" id="stateText2">This card has supporting text below as a natural lead-in to additional
+          content.</p>
+        <p class="card-text" id="stateLink2"></p>
+        <p class="card-text" id="stateStatus2"></p>
+      </div>
+    </div>
+    <div class="card" id="stateThree">
+      <img class="card-img-top" id="stateIcon3" src="..." alt="362x200">
+      <div class="card-body">
+        <h4 class="card-title" id="stateTitle3">State Legislation Cards</h4>
+        <p class="card-text" id="stateText3">This is a wider card with supporting text below as a natural lead-in to
+          additional content. This card has even longer content than the first to show that equal height action.</p>
+        <p class="card-text" id="stateLink3"></p>
+        <p class="card-text" id="stateStatus3"></p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <!-- footer -->
+  <footer class=" text-center" id="footer">
+    <h5 class="h4 text-white pt-4 pb-0">Contact us on Linkedin!</h5>
+    <div class="container p-3 pb-0" id="linkedIn">
+      <section class="mb-2">
+        <!-- Victoria -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/victoria-dunlap/"
+          target="_blank" role="button">Victoria
           <i class="fab fa-linkedin-in"></i>
         </a>
-                <!-- Farrah -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/farrah-syed-a85577141/" target="_blank" role="button">Farrah
+        <!-- Farrah -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/farrah-syed-a85577141/"
+          target="_blank" role="button">Farrah
           <i class="fab fa-linkedin-in"></i>
         </a>
-                <!-- Chalachew -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/chalachew-abawa-ab74971ba/" target="_blank" role="button">Chalachew
+        <!-- Chalachew -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/chalachew-abawa-ab74971ba/"
+          target="_blank" role="button">Chalachew
           <i class="fab fa-linkedin-in"></i>
         </a>
-                <!-- Eric -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/ericwittenstein/" target="_blank" role="button">Eric
+        <!-- Eric -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/ericwittenstein/"
+          target="_blank" role="button">Eric
           <i class="fab fa-linkedin-in"></i>
         </a>
-                <!-- Hunter -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/hunterpadgett1/" target="_blank" role="button">Hunter
+        <!-- Hunter -->
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/hunterpadgett1/"
+          target="_blank" role="button">Hunter
           <i class="fab fa-linkedin-in"></i>
         </a>
-            </section>
-        </div>
-        <div class="text-center pb-2" id="message">
-            Made with love&#10084;&#65039; - Victoria, Farrah, Chalachew, Eric, and Hunter
-        </div>
-    </footer>
+      </section>
+    </div>
+    <div class="text-center pb-2" id="message">
+      Made with love&#10084;&#65039; - Victoria, Farrah, Chalachew, Eric, and Hunter
+    </div>
+  </footer>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./assets/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="./assets/script.js"></script>
 </body>
 
 </html>
