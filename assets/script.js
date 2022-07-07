@@ -39,8 +39,13 @@ function getNationalNews(nationalNewsUrl) {
 			natNewsHeadline.textContent = response.articles[0].title
 			natNewsDescription.textContent = response.articles[0].excerpt
 			natNewsImage.src = response.articles[0].media
-      natNewsLink.textContent = response.articles[0].link
-      // appending 2nd article
+			// a.appendChild(linkToNationalFeatureNews)
+			// a.title = 'Click for more'
+			// a.href = response.articles[0].url
+			// var natURL = response.articles[0].url
+			// var linkOnHeadline = $(`#nationalNewsHeadline`).html(`<a href="${natURL}" target="_blank"></a>`)
+			natNewsLink.textContent = response.articles[0].link
+			// appending 2nd article
 			natNewsHeadline2.textContent = response.articles[1].title
 			natNewsDescription2.textContent = response.articles[1].excerpt
 			natNewsImage2.src = response.articles[1].media
