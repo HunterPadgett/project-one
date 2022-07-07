@@ -1,8 +1,10 @@
-var nationalNewsUrl = 'https://newsapi.org/v2/everything?q=reproductive-rights&from=2022-07-05&sortBy=popularity&pageSize=5&apiKey=71e1603193854be49b0cc7391526fa4f'
+var nationalNewsUrl = 'https://newsapi.org/v2/everything?q=reproductive-rights&sortBy=popularity&pageSize=5&apiKey=71e1603193854be49b0cc7391526fa4f'
 
 var natNewsHeadline = document.getElementById("nationalNewsHeadline")
 var natNewsDescription = document.getElementById("nationalNewsDescription")
 var natNewsImage = document.getElementById("nationalNewsImage")
+// var a = document.createElement('a')
+// var linkToNationalFeatureNews = document.createTextNode("Click here for more")
 
 const options = {
 	method: 'GET',
@@ -12,7 +14,7 @@ const options = {
 	}
 };
 
-function getInternationalNews(nationalNewsUrl) {
+function getNationalNews(nationalNewsUrl) {
 	fetch(nationalNewsUrl, options)
 		.then(response => response.json())
 		.then(response => {
@@ -21,12 +23,17 @@ function getInternationalNews(nationalNewsUrl) {
 			natNewsDescription.textContent = response.articles[0].description
 			// you had the img set to .TextContent but you needed to target the img src :)
 			natNewsImage.src = response.articles[0].urlToImage
+			// a.appendChild(linkToNationalFeatureNews)
+			// a.title = 'Click for more'
+			// a.href = response.articles[0].url
+			var natURL = response.articles[0].url
+			$('#natNewsHeadline').html('<a href="${natURL}" target="_blank"></a>')
 		})
 		.catch(err => console.error(err))
 
 }
 
-getInternationalNews(nationalNewsUrl)
+getNationalNews(nationalNewsUrl)
 
 // variables for state news API
 // legiscan user manual: https://legiscan.com/gaits/documentation/legiscan
