@@ -15,6 +15,9 @@ body {
   background-color: #EFEFEF;
 }
 
+#interContainer {
+  overflow: scroll;
+}
 
 #message, #footer {
   background-color: #04080F;

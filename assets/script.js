@@ -1,10 +1,28 @@
-var nationalNewsUrl = 'https://newsapi.org/v2/everything?q=reproductive-rights&sortBy=popularity&pageSize=5&apiKey=71e1603193854be49b0cc7391526fa4f'
+var nationalNewsUrl = 'https://newsapi.org/v2/everything?q=reproductive-rights&sortBy=popularity&pageSize=10&apiKey=71e1603193854be49b0cc7391526fa4f'
 
+// vars for newsapi . org
 var natNewsHeadline = document.getElementById("nationalNewsHeadline")
 var natNewsDescription = document.getElementById("nationalNewsDescription")
 var natNewsImage = document.getElementById("nationalNewsImage")
 // var a = document.createElement('a')
 // var linkToNationalFeatureNews = document.createTextNode("Click here for more")
+var natNewsLink = document.getElementById("nationalNewsLink")
+var natNewsHeadline2 = document.getElementById("nationalNewsHeadline2")
+var natNewsDescription2 = document.getElementById("nationalNewsDescription2")
+var natNewsImage2 = document.getElementById("nationalNewsImage2")
+var natNewsLink2 = document.getElementById("nationalNewsLink2")
+var natNewsHeadline3 = document.getElementById("nationalNewsHeadline3")
+var natNewsDescription3 = document.getElementById("nationalNewsDescription3")
+var natNewsImage3 = document.getElementById("nationalNewsImage3")
+var natNewsLink3 = document.getElementById("nationalNewsLink3")
+var natNewsHeadline4 = document.getElementById("nationalNewsHeadline4")
+var natNewsDescription4 = document.getElementById("nationalNewsDescription4")
+var natNewsImage4 = document.getElementById("nationalNewsImage4")
+var natNewsLink4 = document.getElementById("nationalNewsLink4")
+var natNewsHeadline5 = document.getElementById("nationalNewsHeadline5")
+var natNewsDescription5 = document.getElementById("nationalNewsDescription5")
+var natNewsImage5 = document.getElementById("nationalNewsImage5")
+var natNewsLink5 = document.getElementById("nationalNewsLink5")
 
 const options = {
 	method: 'GET',
@@ -19,6 +37,7 @@ function getNationalNews(nationalNewsUrl) {
 		.then(response => response.json())
 		.then(response => {
 			console.log(response)
+      // appending first article
 			natNewsHeadline.textContent = response.articles[0].title
 			natNewsDescription.textContent = response.articles[0].description
 			// you had the img set to .TextContent but you needed to target the img src :)
@@ -28,6 +47,27 @@ function getNationalNews(nationalNewsUrl) {
 			// a.href = response.articles[0].url
 			var natURL = response.articles[0].url
 			$('#natNewsHeadline').html('<a href="${natURL}" target="_blank"></a>')
+      natNewsLink.textContent = response.articles[0].url
+      // appending 2nd article
+			natNewsHeadline2.textContent = response.articles[1].title
+			natNewsDescription2.textContent = response.articles[1].description
+			natNewsImage2.src = response.articles[1].urlToImage
+      natNewsLink2.textContent = response.articles[1].url
+      // appending 3rd article
+			natNewsHeadline3.textContent = response.articles[2].title
+			natNewsDescription3.textContent = response.articles[2].description
+			natNewsImage3.src = response.articles[2].urlToImage
+      natNewsLink3.textContent = response.articles[2].url
+      // appending 4th article
+			natNewsHeadline4.textContent = response.articles[3].title
+			natNewsDescription4.textContent = response.articles[3].description
+			natNewsImage4.src = response.articles[3].urlToImage
+      natNewsLink4.textContent = response.articles[3].url
+      // appending 5th article
+			natNewsHeadline5.textContent = response.articles[5].title
+			natNewsDescription5.textContent = response.articles[5].description
+			natNewsImage5.src = response.articles[5].urlToImage
+      natNewsLink5.textContent = response.articles[5].url
 		})
 		.catch(err => console.error(err))
 
