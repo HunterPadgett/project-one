@@ -108,8 +108,30 @@ function getStateNews(stateNewsURL) {
 			$(`#stateLink${H}`).html(`<a href="${BillURL}" target="_blank">Bill Information Page</a>`);
 			// set text of current bill status
 			$(`#stateStatus${H}`).html(`As of ${BillLastAction}, the bill's status is: ${BillStatus}`);
+
+			// inserts an image of the state being referenced above the bill title. This is done by converting a state abreviation into a full name, and that name being inserted into a URL from Wikipedia
+			var stateFullName = getStateName(BillState);
+			$(`#stateIcon${H}`).attr("src", "")
 		}
 	})
+	.catch(err => console.error(err));
+}
+
+// function to convert state abreviation into state name
+function getStateName(stateAbrev) {
+	var options = {
+		method: 'GET',
+		headers: {
+			Country: 'USA',
+			'X-RapidAPI-Key': 'df8820cc33mshf0f6df2756e034fp1ec1bajsna5813e74bc2c',
+			'X-RapidAPI-Host': 'states2.p.rapidapi.com'
+		}
+	};
+	
+	fetch('https://states2.p.rapidapi.com/query?country=USA', options)
+		.then(response => response.json())
+		.then(response => console.log(response))
+		.catch(err => console.error(err));
 }
 
 // function call for state news cards
