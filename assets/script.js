@@ -1,4 +1,4 @@
-var nationalNewsUrl = 'https://newsapi.org/v2/everything?q=reproductive-rights&sortBy=popularity&pageSize=10&apiKey=71e1603193854be49b0cc7391526fa4f'
+var nationalNewsUrl = 'https://api.newscatcherapi.com/v2/search?q=reproductive-rights&lang=en&countries=US&page_size=10'
 
 
 // testinggggggggggg
@@ -29,7 +29,7 @@ var natNewsLink5 = document.getElementById("nationalNewsLink5")
 const options = {
 	method: 'GET',
 	headers: {
-		'X-Api-Key': '71e1603193854be49b0cc7391526fa4f',
+		'X-Api-Key': '-qHy1yp35g0YE9R12kE1fVlqQEQYRNb2ODk2OX1mP_g',
 		// 'X-RapidAPI-Host': 'newsapi.org'
 	}
 };
