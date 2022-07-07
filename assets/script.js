@@ -77,6 +77,32 @@ function getNationalNews(nationalNewsUrl) {
 
 getNationalNews(nationalNewsUrl)
 
+// function to convert state abreviation into state name for display on page
+// api reference link: https://rapidapi.com/saikatjahan50/api/states2/
+function getStateName(cardNum, stateAbrev) {
+	// calls the api that returns an array of state names with key being the abreviation
+	var stateToReturn
+	var options = {
+		method: 'GET',
+		headers: {
+			Country: 'USA',
+			'X-RapidAPI-Key': 'df8820cc33mshf0f6df2756e034fp1ec1bajsna5813e74bc2c',
+			'X-RapidAPI-Host': 'states2.p.rapidapi.com'
+		}
+	};
+	// fetch the data
+	fetch('https://states2.p.rapidapi.com/query?country=USA', options)
+		.then(function (response) {
+			return response.json();
+		}).then(function (data) {
+			// assign a variable to the state name at the relevant location
+			stateToReturn = data[stateAbrev];
+			$(`#stateName${cardNum}`).html(stateToReturn);
+		})
+		.catch(err => console.error(err));
+
+}
+
 // variables for state news API
 // legiscan user manual: https://legiscan.com/gaits/documentation/legiscan
 var stateNewsURL = 'https://api.legiscan.com/?key=9bf6fb64823ce819fdf2cf635e983ccd&op=getSearch&&query=abortion+OR+(pregnancy+NEAR+termination)';
@@ -109,41 +135,14 @@ function getStateNews(stateNewsURL) {
 			// set text of current bill status
 			$(`#stateStatus${H}`).html(`As of ${BillLastAction}, the bill's status is: ${BillStatus}`);
 
-			// inserts an image of the state being referenced above the bill title. This is done by converting a state abreviation into a full name, and that name being inserted into a URL from Wikipedia
-			var stateFullName = getStateName(BillState);
-			stateFullName += stateFullName.toString();
-			console.log(stateFullName);
-			$(`#stateIcon${H}`).attr("src", `https://upload.wikimedia.org/wikipedia/commons/e/e5/Blank_map_subdivisions_2019_Albers_${getStateName(BillState)}.svg`);
-			
+			// inserts the name of the state into the title area of the card
+			stateFullName = getStateName(H, BillState);
 		}
 	})
 		.catch(err => console.error(err));
 }
 
-// function to convert state abreviation into state name
-// api reference link: https://rapidapi.com/saikatjahan50/api/states2/
-function getStateName(stateAbrev) {
-	// calls the api that returns an array of state names with key being the abreviation
-	var options = {
-		method: 'GET',
-		headers: {
-			Country: 'USA',
-			'X-RapidAPI-Key': 'df8820cc33mshf0f6df2756e034fp1ec1bajsna5813e74bc2c',
-			'X-RapidAPI-Host': 'states2.p.rapidapi.com'
-		}
-	};
-	// fetch the data
-	fetch('https://states2.p.rapidapi.com/query?country=USA', options)
-		.then(function (response) {
-			return response.json();
-		}).then(function (data) {
-			// assign a variable to the state name at the relevant location
-			var stateToReturn = data[stateAbrev];
-			// return that state name
-			return stateToReturn;
-		})
-		.catch(err => console.error(err));
-}
+
 
 // function call for state news cards
 getStateNews(stateNewsURL);
