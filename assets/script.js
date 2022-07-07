@@ -1,13 +1,9 @@
 var nationalNewsUrl = 'https://api.newscatcherapi.com/v2/search?q=reproductive-rights&lang=en&countries=US&page_size=15'
 
-
-// testinggggggggggg
 // vars for newsapi . org
 var natNewsHeadline = document.getElementById("nationalNewsHeadline")
 var natNewsDescription = document.getElementById("nationalNewsDescription")
 var natNewsImage = document.getElementById("nationalNewsImage")
-// var a = document.createElement('a')
-// var linkToNationalFeatureNews = document.createTextNode("Click here for more")
 var natNewsLink = document.getElementById("nationalNewsLink")
 var natNewsHeadline2 = document.getElementById("nationalNewsHeadline2")
 var natNewsDescription2 = document.getElementById("nationalNewsDescription2")
@@ -33,7 +29,7 @@ const options = {
 		// 'X-RapidAPI-Host': 'newsapi.org'
 	}
 };
-
+    // fetch for newscatcherapi
 function getNationalNews(nationalNewsUrl) {
 	fetch(nationalNewsUrl, options)
 		.then(response => response.json())
@@ -42,13 +38,7 @@ function getNationalNews(nationalNewsUrl) {
 			// appending first article
 			natNewsHeadline.textContent = response.articles[0].title
 			natNewsDescription.textContent = response.articles[0].excerpt
-			// you had the img set to .TextContent but you needed to target the img src :)
 			natNewsImage.src = response.articles[0].media
-			// a.appendChild(linkToNationalFeatureNews)
-			// a.title = 'Click for more'
-			// a.href = response.articles[0].url
-			// var natURL = response.articles[0].url
-			// var linkOnHeadline = $(`#nationalNewsHeadline`).html(`<a href="${natURL}" target="_blank"></a>`)
 			natNewsLink.textContent = response.articles[0].link
 			// appending 2nd article
 			natNewsHeadline2.textContent = response.articles[1].title

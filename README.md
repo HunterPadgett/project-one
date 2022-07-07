@@ -8,11 +8,13 @@ Users can use this web app to stay in the loop with national and state-specific 
 
 ## Technologies/API's Used
 
-HTML, CSS, JavaScript, Bootstrap, jQuery, Google Fonts, Font Awesome, Twitter Publish, Programmable Search Engine from Google, https://newsapi.org/, https://legiscan.com/legiscan
+HTML, CSS, JavaScript, Bootstrap, jQuery, Google Fonts, Font Awesome, Twitter Publish, Programmable Search Engine from Google, https://newscatcherapi.com, https://legiscan.com/legiscan, 
 
 ## Screenshots
 
-
+![Untitled-2022-06-17-1141](https://user-images.githubusercontent.com/106113692/177868076-2528ee8d-c749-4c37-8835-58bac9a3c1a5.png)
+![Screenshot (58)](https://user-images.githubusercontent.com/106113692/177844369-c65bc8b6-9b4e-426f-a323-19d7dec12620.png)
+![Screenshot (59)](https://user-images.githubusercontent.com/106113692/177844375-948da6cf-3dad-44f6-8280-a6afa5b3c65e.png)
 
 ## Roadmap
 

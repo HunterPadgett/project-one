@@ -1,29 +1,35 @@
+/* universal font from Google Fonts */
 * {
   font-family: 'Mukta', sans-serif;
 }
 
+/* styling for jumbotron */
 #jumbotron {
   background-color: #EFEFEF;
-  color: #FF3B3F;
+  color: #9a282e;
 }
 
+/* stying for body */
 body {
   background-color: #9A1414;
 }
 
-#interContainer, #stateOne, #stateTwo, #stateThree {
+/* stying for containers */
+#interContainer,
+#stateOne,
+#stateTwo,
+#stateThree {
   background-color: #EFEFEF;
 }
 
+/* created scroll feature so articles would be contained */
 #interContainer {
   overflow: scroll;
 }
 
-#message, #footer {
+/* styling for footer */
+#message,
+#footer {
   background-color: #04080F;
   color: white;
-}
-
-.twitter-timeline {
-  overflow: scroll;
 }
