@@ -1,4 +1,4 @@
-var nationalNewsUrl = 'https://stormy-cliffs-87695.herokuapp.com/https://newsapi.org/v2/everything?q=reproductive-rights&sortBy=popularity&pageSize=10&apiKey=71e1603193854be49b0cc7391526fa4f'
+var nationalNewsUrl = 'https://api.newscatcherapi.com/v2/search?q=reproductive-rights&lang=en&countries=US&page_size=10'
 
 
 // testinggggggggggg
@@ -29,7 +29,7 @@ var natNewsLink5 = document.getElementById("nationalNewsLink5")
 const options = {
 	method: 'GET',
 	headers: {
-		'X-Api-Key': '71e1603193854be49b0cc7391526fa4f',
+		'X-Api-Key': '-qHy1yp35g0YE9R12kE1fVlqQEQYRNb2ODk2OX1mP_g',
 		// 'X-RapidAPI-Host': 'newsapi.org'
 	}
 };
@@ -41,35 +41,35 @@ function getNationalNews(nationalNewsUrl) {
 			console.log(response)
 			// appending first article
 			natNewsHeadline.textContent = response.articles[0].title
-			natNewsDescription.textContent = response.articles[0].description
+			natNewsDescription.textContent = response.articles[0].excerpt
 			// you had the img set to .TextContent but you needed to target the img src :)
-			natNewsImage.src = response.articles[0].urlToImage
+			natNewsImage.src = response.articles[0].media
 			// a.appendChild(linkToNationalFeatureNews)
 			// a.title = 'Click for more'
 			// a.href = response.articles[0].url
-			var natURL = response.articles[0].url
+			// var natURL = response.articles[0].url
 			// var linkOnHeadline = $(`#nationalNewsHeadline`).html(`<a href="${natURL}" target="_blank"></a>`)
-      natNewsLink.textContent = response.articles[0].url
+      natNewsLink.textContent = response.articles[0].link
       // appending 2nd article
 			natNewsHeadline2.textContent = response.articles[1].title
-			natNewsDescription2.textContent = response.articles[1].description
-			natNewsImage2.src = response.articles[1].urlToImage
-			natNewsLink2.textContent = response.articles[1].url
+			natNewsDescription2.textContent = response.articles[1].excerpt
+			natNewsImage2.src = response.articles[1].media
+			natNewsLink2.textContent = response.articles[1].link
 			// appending 3rd article
 			natNewsHeadline3.textContent = response.articles[2].title
-			natNewsDescription3.textContent = response.articles[2].description
-			natNewsImage3.src = response.articles[2].urlToImage
-			natNewsLink3.textContent = response.articles[2].url
+			natNewsDescription3.textContent = response.articles[2].excerpt
+			natNewsImage3.src = response.articles[2].media
+			natNewsLink3.textContent = response.articles[2].link
 			// appending 4th article
 			natNewsHeadline4.textContent = response.articles[3].title
-			natNewsDescription4.textContent = response.articles[3].description
-			natNewsImage4.src = response.articles[3].urlToImage
-			natNewsLink4.textContent = response.articles[3].url
+			natNewsDescription4.textContent = response.articles[3].excerpt
+			natNewsImage4.src = response.articles[3].media
+			natNewsLink4.textContent = response.articles[3].link
 			// appending 5th article
 			natNewsHeadline5.textContent = response.articles[5].title
-			natNewsDescription5.textContent = response.articles[5].description
-			natNewsImage5.src = response.articles[5].urlToImage
-			natNewsLink5.textContent = response.articles[5].url
+			natNewsDescription5.textContent = response.articles[5].excerpt
+			natNewsImage5.src = response.articles[5].media
+			natNewsLink5.textContent = response.articles[5].link
 		})
 		.catch(err => console.error(err))
 
