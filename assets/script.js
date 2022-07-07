@@ -49,8 +49,8 @@ function getNationalNews(nationalNewsUrl) {
 			// a.href = response.articles[0].url
 			// var natURL = response.articles[0].url
 			// var linkOnHeadline = $(`#nationalNewsHeadline`).html(`<a href="${natURL}" target="_blank"></a>`)
-      natNewsLink.textContent = response.articles[0].link
-      // appending 2nd article
+			natNewsLink.textContent = response.articles[0].link
+			// appending 2nd article
 			natNewsHeadline2.textContent = response.articles[1].title
 			natNewsDescription2.textContent = response.articles[1].excerpt
 			natNewsImage2.src = response.articles[1].media
@@ -111,14 +111,19 @@ function getStateNews(stateNewsURL) {
 
 			// inserts an image of the state being referenced above the bill title. This is done by converting a state abreviation into a full name, and that name being inserted into a URL from Wikipedia
 			var stateFullName = getStateName(BillState);
-			$(`#stateIcon${H}`).attr("src", "")
+			stateFullName += stateFullName.toString();
+			console.log(stateFullName);
+			$(`#stateIcon${H}`).attr("src", `https://upload.wikimedia.org/wikipedia/commons/e/e5/Blank_map_subdivisions_2019_Albers_${getStateName(BillState)}.svg`);
+			
 		}
 	})
-	.catch(err => console.error(err));
+		.catch(err => console.error(err));
 }
 
 // function to convert state abreviation into state name
+// api reference link: https://rapidapi.com/saikatjahan50/api/states2/
 function getStateName(stateAbrev) {
+	// calls the api that returns an array of state names with key being the abreviation
 	var options = {
 		method: 'GET',
 		headers: {
@@ -127,10 +132,16 @@ function getStateName(stateAbrev) {
 			'X-RapidAPI-Host': 'states2.p.rapidapi.com'
 		}
 	};
-	
+	// fetch the data
 	fetch('https://states2.p.rapidapi.com/query?country=USA', options)
-		.then(response => response.json())
-		.then(response => console.log(response))
+		.then(function (response) {
+			return response.json();
+		}).then(function (data) {
+			// assign a variable to the state name at the relevant location
+			var stateToReturn = data[stateAbrev];
+			// return that state name
+			return stateToReturn;
+		})
 		.catch(err => console.error(err));
 }
 
