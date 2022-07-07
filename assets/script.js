@@ -41,35 +41,35 @@ function getNationalNews(nationalNewsUrl) {
 			console.log(response)
 			// appending first article
 			natNewsHeadline.textContent = response.articles[0].title
-			natNewsDescription.textContent = response.articles[0].description
+			natNewsDescription.textContent = response.articles[0].excerpt
 			// you had the img set to .TextContent but you needed to target the img src :)
 			natNewsImage.src = response.articles[0].urlToImage
 			// a.appendChild(linkToNationalFeatureNews)
 			// a.title = 'Click for more'
 			// a.href = response.articles[0].url
-			var natURL = response.articles[0].url
+			// var natURL = response.articles[0].url
 			// var linkOnHeadline = $(`#nationalNewsHeadline`).html(`<a href="${natURL}" target="_blank"></a>`)
-      natNewsLink.textContent = response.articles[0].url
+      natNewsLink.textContent = response.articles[0].link
       // appending 2nd article
 			natNewsHeadline2.textContent = response.articles[1].title
-			natNewsDescription2.textContent = response.articles[1].description
+			natNewsDescription2.textContent = response.articles[1].excerpt
 			natNewsImage2.src = response.articles[1].urlToImage
-			natNewsLink2.textContent = response.articles[1].url
+			natNewsLink2.textContent = response.articles[1].link
 			// appending 3rd article
 			natNewsHeadline3.textContent = response.articles[2].title
-			natNewsDescription3.textContent = response.articles[2].description
+			natNewsDescription3.textContent = response.articles[2].excerpt
 			natNewsImage3.src = response.articles[2].urlToImage
-			natNewsLink3.textContent = response.articles[2].url
+			natNewsLink3.textContent = response.articles[2].link
 			// appending 4th article
 			natNewsHeadline4.textContent = response.articles[3].title
-			natNewsDescription4.textContent = response.articles[3].description
+			natNewsDescription4.textContent = response.articles[3].excerpt
 			natNewsImage4.src = response.articles[3].urlToImage
-			natNewsLink4.textContent = response.articles[3].url
+			natNewsLink4.textContent = response.articles[3].link
 			// appending 5th article
 			natNewsHeadline5.textContent = response.articles[5].title
-			natNewsDescription5.textContent = response.articles[5].description
+			natNewsDescription5.textContent = response.articles[5].excerpt
 			natNewsImage5.src = response.articles[5].urlToImage
-			natNewsLink5.textContent = response.articles[5].url
+			natNewsLink5.textContent = response.articles[5].link
 		})
 		.catch(err => console.error(err))
 
