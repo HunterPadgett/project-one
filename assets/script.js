@@ -48,7 +48,7 @@ function getNationalNews(nationalNewsUrl) {
 			// a.title = 'Click for more'
 			// a.href = response.articles[0].url
 			var natURL = response.articles[0].url
-			$('#natNewsHeadline').html('<a href="${natURL}" target="_blank"></a>')
+			// var linkOnHeadline = $(`#nationalNewsHeadline`).html(`<a href="${natURL}" target="_blank"></a>`)
       natNewsLink.textContent = response.articles[0].url
       // appending 2nd article
 			natNewsHeadline2.textContent = response.articles[1].title
