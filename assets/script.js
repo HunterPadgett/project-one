@@ -1,4 +1,4 @@
-var nationalNewsUrl = 'https://newsapi.org/v2/everything?q=reproductive-rights&sortBy=popularity&pageSize=10&apiKey=71e1603193854be49b0cc7391526fa4f'
+var nationalNewsUrl = 'https://stormy-cliffs-87695.herokuapp.com/https://newsapi.org/v2/everything?q=reproductive-rights&sortBy=popularity&pageSize=10&apiKey=71e1603193854be49b0cc7391526fa4f'
 
 
 // testinggggggggggg
