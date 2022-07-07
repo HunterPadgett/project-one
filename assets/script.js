@@ -43,7 +43,7 @@ function getNationalNews(nationalNewsUrl) {
 			natNewsHeadline.textContent = response.articles[0].title
 			natNewsDescription.textContent = response.articles[0].excerpt
 			// you had the img set to .TextContent but you needed to target the img src :)
-			natNewsImage.src = response.articles[0].urlToImage
+			natNewsImage.src = response.articles[0].media
 			// a.appendChild(linkToNationalFeatureNews)
 			// a.title = 'Click for more'
 			// a.href = response.articles[0].url
