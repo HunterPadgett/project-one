@@ -1,9 +1,13 @@
-var nationalNewsUrl = 'https://newsapi.org/v2/everything?q=reproductive-rights&from=2022-07-05&sortBy=popularity&pageSize=10&apiKey=71e1603193854be49b0cc7391526fa4f'
+var nationalNewsUrl = 'https://newsapi.org/v2/everything?q=reproductive-rights&sortBy=popularity&pageSize=10&apiKey=71e1603193854be49b0cc7391526fa4f'
 
+
+// testinggggggggggg
 // vars for newsapi . org
 var natNewsHeadline = document.getElementById("nationalNewsHeadline")
 var natNewsDescription = document.getElementById("nationalNewsDescription")
 var natNewsImage = document.getElementById("nationalNewsImage")
+// var a = document.createElement('a')
+// var linkToNationalFeatureNews = document.createTextNode("Click here for more")
 var natNewsLink = document.getElementById("nationalNewsLink")
 var natNewsHeadline2 = document.getElementById("nationalNewsHeadline2")
 var natNewsDescription2 = document.getElementById("nationalNewsDescription2")
@@ -30,7 +34,7 @@ const options = {
 	}
 };
 
-function getInternationalNews(nationalNewsUrl) {
+function getNationalNews(nationalNewsUrl) {
 	fetch(nationalNewsUrl, options)
 		.then(response => response.json())
 		.then(response => {
@@ -40,6 +44,11 @@ function getInternationalNews(nationalNewsUrl) {
 			natNewsDescription.textContent = response.articles[0].description
 			// you had the img set to .TextContent but you needed to target the img src :)
 			natNewsImage.src = response.articles[0].urlToImage
+			// a.appendChild(linkToNationalFeatureNews)
+			// a.title = 'Click for more'
+			// a.href = response.articles[0].url
+			var natURL = response.articles[0].url
+			$('#natNewsHeadline').html('<a href="${natURL}" target="_blank"></a>')
       natNewsLink.textContent = response.articles[0].url
       // appending 2nd article
 			natNewsHeadline2.textContent = response.articles[1].title
@@ -66,7 +75,7 @@ function getInternationalNews(nationalNewsUrl) {
 
 }
 
-getInternationalNews(nationalNewsUrl)
+getNationalNews(nationalNewsUrl)
 
 // variables for state news API
 // legiscan user manual: https://legiscan.com/gaits/documentation/legiscan
