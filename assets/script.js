@@ -43,7 +43,7 @@ function getNationalNews(nationalNewsUrl) {
 			natNewsHeadline.textContent = response.articles[0].title
 			natNewsDescription.textContent = response.articles[0].description
 			// you had the img set to .TextContent but you needed to target the img src :)
-			natNewsImage.src = response.articles[0].urlToImage
+			natNewsImage.src = response.articles[0].media
 			// a.appendChild(linkToNationalFeatureNews)
 			// a.title = 'Click for more'
 			// a.href = response.articles[0].url
@@ -53,22 +53,22 @@ function getNationalNews(nationalNewsUrl) {
       // appending 2nd article
 			natNewsHeadline2.textContent = response.articles[1].title
 			natNewsDescription2.textContent = response.articles[1].description
-			natNewsImage2.src = response.articles[1].urlToImage
+			natNewsImage2.src = response.articles[1].media
 			natNewsLink2.textContent = response.articles[1].url
 			// appending 3rd article
 			natNewsHeadline3.textContent = response.articles[2].title
 			natNewsDescription3.textContent = response.articles[2].description
-			natNewsImage3.src = response.articles[2].urlToImage
+			natNewsImage3.src = response.articles[2].media
 			natNewsLink3.textContent = response.articles[2].url
 			// appending 4th article
 			natNewsHeadline4.textContent = response.articles[3].title
 			natNewsDescription4.textContent = response.articles[3].description
-			natNewsImage4.src = response.articles[3].urlToImage
+			natNewsImage4.src = response.articles[3].media
 			natNewsLink4.textContent = response.articles[3].url
 			// appending 5th article
 			natNewsHeadline5.textContent = response.articles[5].title
 			natNewsDescription5.textContent = response.articles[5].description
-			natNewsImage5.src = response.articles[5].urlToImage
+			natNewsImage5.src = response.articles[5].media
 			natNewsLink5.textContent = response.articles[5].url
 		})
 		.catch(err => console.error(err))
