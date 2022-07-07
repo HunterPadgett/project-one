@@ -1,4 +1,4 @@
-var nationalNewsUrl = 'https://api.newscatcherapi.com/v2/search?q=reproductive-rights&lang=en&countries=US&page_size=10'
+var nationalNewsUrl = 'https://api.newscatcherapi.com/v2/search?q=reproductive-rights&lang=en&countries=US&page_size=15'
 
 
 // testinggggggggggg
@@ -56,20 +56,20 @@ function getNationalNews(nationalNewsUrl) {
 			natNewsImage2.src = response.articles[1].media
 			natNewsLink2.textContent = response.articles[1].link
 			// appending 3rd article
-			natNewsHeadline3.textContent = response.articles[2].title
-			natNewsDescription3.textContent = response.articles[2].excerpt
-			natNewsImage3.src = response.articles[2].media
-			natNewsLink3.textContent = response.articles[2].link
+			natNewsHeadline3.textContent = response.articles[6].title
+			natNewsDescription3.textContent = response.articles[6].excerpt
+			natNewsImage3.src = response.articles[6].media
+			natNewsLink3.textContent = response.articles[6].link
 			// appending 4th article
-			natNewsHeadline4.textContent = response.articles[3].title
-			natNewsDescription4.textContent = response.articles[3].excerpt
-			natNewsImage4.src = response.articles[3].media
-			natNewsLink4.textContent = response.articles[3].link
+			natNewsHeadline4.textContent = response.articles[7].title
+			natNewsDescription4.textContent = response.articles[7].excerpt
+			natNewsImage4.src = response.articles[7].media
+			natNewsLink4.textContent = response.articles[7].link
 			// appending 5th article
-			natNewsHeadline5.textContent = response.articles[5].title
-			natNewsDescription5.textContent = response.articles[5].excerpt
-			natNewsImage5.src = response.articles[5].media
-			natNewsLink5.textContent = response.articles[5].link
+			natNewsHeadline5.textContent = response.articles[12].title
+			natNewsDescription5.textContent = response.articles[12].excerpt
+			natNewsImage5.src = response.articles[12].media
+			natNewsLink5.textContent = response.articles[12].link
 		})
 		.catch(err => console.error(err))
 
